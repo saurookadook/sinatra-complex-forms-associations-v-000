@@ -37,6 +37,7 @@ class PetsController < ApplicationController
     @pet.update(params[])
     if !params[:pet][:owner_id].nil?
       @pet.owner_id = params[:pet][:owner_id]
+    elsif !params[:owner_name].empty?
     end
     redirect to "pets/#{@pet.id}"
   end
