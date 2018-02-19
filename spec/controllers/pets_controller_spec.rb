@@ -13,7 +13,7 @@ describe "Pets Controller" do
       expect(page).to have_field('pet[name]')
     end
 
-    it "has a form with a checkbox for existing owners" do
+    it "has a form with a select for existing owners" do
       @owner1 = Owner.create(:name => "Cricky")
       @owner2 = Owner.create(:name => "Chris")
 
