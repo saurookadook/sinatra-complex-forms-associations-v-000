@@ -13,7 +13,7 @@ class PetsController < ApplicationController
   post '/pets' do
     @pet = Pet.create(params[:pet])
     if !params["pet"]["owner_id"].empty?
-      @owner.pets
+      @pet.owner_id = params[:owner_id]
     end
     @owner.save
     redirect to "pets/#{@pet.id}"
