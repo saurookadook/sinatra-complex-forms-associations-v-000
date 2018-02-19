@@ -39,8 +39,8 @@ class PetsController < ApplicationController
     binding.pry
     if !params[:pet][:owner_id].nil?
       @pet.update(owner_id: params[:pet][:owner_id])
-    elsif !params[:owner_name].empty?
-      owner = Owner.create(name: params[:owner_name])
+    elsif !params[:owner].empty?
+      owner = Owner.create(name: params[:owner][:name])
       @pet.update(owner_id: owner.id)
     end
     redirect to "pets/#{@pet.id}"
